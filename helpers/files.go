@@ -1,21 +1,18 @@
-package utils
+package helpers
 
 import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"path/filepath"
 
 	"gopkg.in/yaml.v2"
 )
 
-func GetMyPath() string {
-	ex, err := os.Executable()
-	if err != nil {
-		return ""
+func CheckIfPathExist(path string) bool {
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return false
 	}
-	exPath := filepath.Dir(ex)
-	return exPath
+	return true
 }
 
 func ReadYAML(path string, result interface{}) error {

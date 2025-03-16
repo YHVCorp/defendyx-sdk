@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/YHVCorp/defendyx-sdk/utils"
+	"github.com/YHVCorp/defendyx-sdk/helpers"
 )
 
 const (
@@ -42,7 +42,7 @@ type FieldsConfig struct {
 
 func LoadConfig(filePath string) (*Config, error) {
 	config := &Config{}
-	err := utils.ReadYAML(filePath, config)
+	err := helpers.ReadYAML(filePath, config)
 	if err != nil {
 		return nil, err
 	}
@@ -76,5 +76,5 @@ func LoadConfig(filePath string) (*Config, error) {
 }
 
 func SaveConfig(filePath string, config *Config) error {
-	return utils.WriteYAML(filePath, config)
+	return helpers.WriteYAML(filePath, config)
 }

@@ -41,13 +41,12 @@ message Event {
 
 message Device {
     string ip = 1;
-    string hostname = 2;
-    string os = 3;
-    Status status = 4;
-    string platform = 5;
-    string version = 6;
-    uint32 id = 7;
-    string last_seen = 8;
-    string mac = 9;
-    string addresses = 10;
+    string arch = 2;
+    string hostname = 3;
+    string os = 4;
+    Status status = 5;
+    uint32 id = 6;
+    string last_seen = 7;
+    string mac = 8;
+    string addresses = 9;
 }
